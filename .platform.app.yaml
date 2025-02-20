@@ -39,7 +39,7 @@ mounts:
     "/var/log": { source: local, source_path: var/log }
 
 relationships:
-    database: 'database:mysql'
+    database: "mysql:mysql"
     
 
 hooks:
