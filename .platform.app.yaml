@@ -10,7 +10,13 @@ runtime:
         - ctype
         - iconv
         
-
+variables:
+  env:
+    DATABASE_URL: "mysql://root@127.0.0.1:3306/ecf_ecoride?serverVersion=10.4.32-MariaDB&charset=utf8mb4"
+    php:
+        memory_limit: 512M
+        opcache.enable: 1
+        opcache.validate_timestamps: 1
 #variables:
 #    php:
 #        # uncomment on PHP 7.4+
@@ -30,6 +36,10 @@ web:
 
 mounts:
     "/var/cache": { source: local, source_path: var/cache }
+    "/var/log": { source: local, source_path: var/log }
+
+relationships:
+    database: 'database:mysql'
     
 
 hooks:
