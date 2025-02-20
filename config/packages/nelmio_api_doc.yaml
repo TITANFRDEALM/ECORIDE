@@ -1,0 +1,20 @@
+nelmio_api_doc:
+    documentation:
+        info:
+            title: ECORIDE
+            description: La solution verte du transport
+            version: 1.0.0
+        swagger_ui:
+            enabled: true
+            url: /api/doc.json
+        components:
+            securitySchemes:
+                X-AUTH-TOKEN:
+                    type : apiKey
+                    name: X-AUTH-TOKEN
+                    in: header
+        security:
+            - X-AUTH-TOKEN: [ ]
+    areas: # to filter documented areas
+        path_patterns:
+            - ^/api(?!/doc$) # Accepts routes under /api except /api/doc
