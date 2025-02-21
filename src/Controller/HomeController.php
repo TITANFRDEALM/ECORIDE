@@ -11,6 +11,6 @@ class HomeController extends AbstractController
     #[Route('/', name: 'home', methods: ['GET'])]
     public function home() : Response
     {
-        return new Response('Bienvenue sur Ecoride');
+        return new Response('Bienvenue sur Farfallina62');
     }
 }
